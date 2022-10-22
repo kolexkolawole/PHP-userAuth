@@ -15,7 +15,7 @@ registerUser($username, $email, $password);
     'password' => $password,
    );
    $file = fopen("../storage/users.csv", "r");
-   while((line = fgetcsv($file)) !== FALSE){
+   while(($line = fgetcsv($file)) !== FALSE){
     if($line[1] == $email){
         $success = true;
         break;
