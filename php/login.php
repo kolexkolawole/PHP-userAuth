@@ -24,10 +24,10 @@ function loginUser($email, $password){
         session_write_close();
         header("location: ../dashbord.php");
     }else{
-        echo '<script>'
+        echo '<script>
         alert(" Sorry... Email Or Password is incorrect");
         window.location.href="../forms/login.html";
-        '</script>';
+        </script>';
     }
 }
 
