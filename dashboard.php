@@ -28,12 +28,12 @@
      <h1 class="">Welcome to Zuri Authentication
 <?php
 session_start();
-if(isset($_POST[' ../dashboard.php'])){
+if(isset($_POST['submit'])){
   echo "<br>";
-echo "WELCOME" . $_POST['full_name'];
+echo "WELCOME" . $_POST['fullname'];
 }
 ?>
-    </div>
+     </h1></div>
    
 </body>
 </html>

@@ -1,25 +1,27 @@
 <?php
 if(isset($_POST['submit'])){
-    $username = $_POST['full_name'];//finish this line
+    // $username = $_POST['fullname'];//finish this line
     $email = $_POST['email'];
     $password = $_POST['password'];//finish this
 
-loginUser($username, $email, $password);
+loginUser($email, $password);
 
 }  
 
-function loginUser($username, $email, $password){
+function loginUser($email, $password){
     $file = fopen("../storage/users.csv", "r");
     while(($line = fgetcsv($file)) !== FALSE){
+        $line = fgetcsv($file);
         if($line[1] == $email && $line[2] == $password ){
-            $success = true;
+           $_SESSION['username'] = $line[0];
+           $success = true;
             break;
         }
     } 
     fclose($file);
     if ($success) {
         session_start();
-        $_SESSION['full_name'] = $username;
+        // $_SESSION['fullname'] = $username;
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
         session_write_close();

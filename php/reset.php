@@ -1,8 +1,9 @@
 <?php
 session_start();
+$email = $_SESSION['email'];
 if(isset($_POST['submit'])){
     // $full_name = $_POST['full_name'];
-    $email = $_POST['email'];
+    // $email = $_POST['email'];
     $password = $_POST['password'];//complete this;
     // $newpassword = $_POST['newpassword']; //complete this;
 

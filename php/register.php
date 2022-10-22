@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['submit'])){
-    $username = $_POST['full_name'];
+    $username = $_POST['fullname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -10,11 +10,11 @@ registerUser($username, $email, $password);
 
  function registerUser($username, $email, $password){
    $form_data = array(
-    'full_name' => $username,
+    'fullname' => $username,
     'email' => $email,
-    'password' => $password,
+    'password' => $password
    );
-   $file = fopen("../storage/users.csv", "r");
+   $file = fopen("../storage/users.csv", "a");
    while(($line = fgetcsv($file)) !== FALSE){
     if($line[1] == $email){
         $success = true;
