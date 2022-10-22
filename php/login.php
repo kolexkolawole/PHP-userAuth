@@ -22,12 +22,13 @@ function loginUser($email, $password){
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
         session_write_close();
-        header("location: ../dashbord.php");
+        header("Location: ../dashbord.php");
     }else{
         echo '<script>
         alert(" Sorry... Email or Password is incorrect");
         window.location.href="../forms/login.html";
         </script>';
+        exit();
     }
 }
 
