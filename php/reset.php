@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 function resetPassword($email, $password, $newpassword){
     if(isset($_POST['submit'])){
