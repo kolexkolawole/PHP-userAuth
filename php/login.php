@@ -25,7 +25,7 @@ function loginUser($email, $password){
         header("location: ../dashbord.php");
     }else{
         echo '<script>'
-        alert(" Sorry... Email or Password is incorrect");
+        alert(" Sorry... Email Or Password is incorrect");
         window.location.href="../forms/login.html";
         '</script>';
     }
