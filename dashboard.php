@@ -20,7 +20,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item f-right">
-        <a class="nav-link" href="php/logout.php">Logout</a>
+        <a class="nav-link" href="forms/login.html">Logout</a>
       </li>
   </div>
 </nav>
@@ -28,8 +28,9 @@
      <h1 class="">Welcome to Zuri Authentication
 <?php
 session_start();
-if($_SESSION || isset($_SESSION['full_name'])){
-echo $_SESSION['full_name'];
+if(isset($_POST[' ../dashboard.php'])){
+  echo "<br>";
+echo "WELCOME" . $_POST['full_name'];
 }
 ?>
     </div>
