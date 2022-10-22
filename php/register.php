@@ -8,9 +8,9 @@ registerUser($username, $email, $password);
 
 }
 
- function registerUser($email, $password){
+ function registerUser($username, $email, $password){
    $form_data = array(
-    'full_name' => $name,
+    'username' => $full_name,
     'email' => $email,
     'password' => $password,
    );

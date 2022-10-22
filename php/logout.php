@@ -9,13 +9,10 @@ function logout(){
     $params["path"], $params["domain"],
     $params["secure"], $params["httponly"]
    );
-      }
+      }else{
       session_destroy();
-      header("Location: ../index.php");
-   else{
       header("Location: ../index.php?error=You are not logged in");
-
-
+      
    }
       
     }
