@@ -13,7 +13,7 @@ function resetPassword($email, $password,){
     $file_read = fopen("../storage/users.csv", "r");
    $file_write = fopen("../storage/temporary.csv", "w");
    while(($data = fgetcsv($file_read)) !== FALSE){
-    if($data[1] == $emaill){
+    if($data[1] !== $email){
         $data[2] = $password;
         echo '<script>
         alert(" Successful change password");
