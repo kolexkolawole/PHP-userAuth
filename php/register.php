@@ -10,7 +10,7 @@ registerUser($username, $email, $password);
 
  function registerUser($username, $email, $password){
    $form_data = array(
-    'username' => $full_name,
+    'full_name' => $username,
     'email' => $email,
     'password' => $password,
    );
