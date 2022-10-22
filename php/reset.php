@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
     resetPassword($email, $password);
 }
 
-function resetPassword($email, $password, $newpassword){
+function resetPassword($email, $password,){
     $file_read = fopen("../storage/users.csv", "r");
    $file_write = fopen("../storage/temporary.csv", "w");
    while(($data = fgetcsv($file_read)) !== FALSE){
