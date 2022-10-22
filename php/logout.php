@@ -1,7 +1,7 @@
 <?php
- session_start();
+//  session_start();
 
- $_SESSION = array();
+//  $_SESSION = array();
 function logout(){
    if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
@@ -11,7 +11,12 @@ function logout(){
    );
       }
       session_destroy();
-      header("location:../forms/login.html");
+      header("Location: ../index.php");
+   else{
+      header("Location: ../index.php?error=You are not logged in");
+
+
+   }
       
     }
     /*

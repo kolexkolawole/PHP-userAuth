@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['submit'])){
-    // $username = $_POST['fullname'];//finish this line
+    $username = $_POST['full_name'];//finish this line
     $email = $_POST['email'];
     $password = $_POST['password'];//finish this
 
@@ -10,11 +10,10 @@ loginUser($email, $password);
 
 function loginUser($email, $password){
     $file = fopen("../storage/users.csv", "r");
-    while(!feof($file)){
-        $line = fgetcsv($file);
+    while(($line = fgetcsv($file)) !== FALSE){
         if($line[1] == $email && $line[2] == $password ){
-            $_SESSION['username'] = $line[0];
-
+            $success = true;
+            break;
         }
     } 
     fclose($file);

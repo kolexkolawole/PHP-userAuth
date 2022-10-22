@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['submit'])){
-    $username = $_POST['fullname'];
+    $username = $_POST['full_name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -8,7 +8,7 @@ registerUser($username, $email, $password);
 
 }
 
- function registerUser($username, $email, $password){
+ function registerUser($email, $password){
    $form_data = array(
     'full_name' => $name,
     'email' => $email,
