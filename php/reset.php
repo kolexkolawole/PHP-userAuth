@@ -1,14 +1,17 @@
 <?php
-if(isset($_POST['submit'])){
-    $name = $_POST['full_name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];//complete this;
-    $newpassword = $_POST['newpassword']; //complete this;
-
-    resetPassword($email, $password, $newpassword);
-}
+session_start();
 
 function resetPassword($email, $password, $newpassword){
+    if(isset($_POST['submit'])){
+        // $full_name = $_POST['full_name'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];//complete this;
+        // $newpassword = $_POST['newpassword']; //complete this;
+    
+        resetPassword($email, $password);
+    }
+    
+    $file_read = fopen("../storage/users.csv", "r");
    $file_write = fopen("../storage/temporary.csv", "w");
    while(($data = fgetcsv($file_read)) !== FALSE){
     if($data[1] == $emaill){
